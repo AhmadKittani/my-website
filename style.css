@@ -1,13 +1,15 @@
 :root {
-    --primary-color: #2c5282; /* Changed from black to a professional blue */
-    --primary-dark: #1a365d; /* Added darker shade for hover effects */
+    --primary-color: #2c5282;
+    /* Changed from black to a professional blue */
+    --primary-dark: #1a365d;
+    /* Added darker shade for hover effects */
     --white: #ffffff;
     --light-gray: #f8f9fa;
     --text-color: #2d3748;
     --accent-color: #e8e8e8;
     --box-shadow: 0 4px 6px rgba(44, 82, 130, 0.1);
     --transition: all 0.3s ease;
-    --slideshow-height: 600px;
+    --slideshow-height: 800px;
 }
 
 body {
@@ -18,13 +20,14 @@ body {
     line-height: 1.6;
     direction: rtl;
     text-align: right;
-    overflow-x: hidden; /* Add this to prevent horizontal scrolling */
+    overflow-x: hidden;
+    /* Add this to prevent horizontal scrolling */
     width: 100%;
     position: relative;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    overflow-y: overlay;
+    overflow-y: overlay
 }
 
 header {
@@ -87,8 +90,10 @@ nav {
     box-shadow: none;
     padding: 0;
     display: flex;
-    justify-content: flex-start; /* Changed from flex-end to flex-start */
-    flex-direction: row; /* Added to ensure correct order */
+    justify-content: flex-start;
+    /* Changed from flex-end to flex-start */
+    flex-direction: row;
+    /* Added to ensure correct order */
     padding: 1rem 0;
 }
 
@@ -98,7 +103,8 @@ nav a {
     padding: 0.7rem 1.2rem;
     text-decoration: none;
     transition: all 0.3s ease;
-    margin: 0 0.5rem 0 0; /* Changed margin from left to right */
+    margin: 0 0.5rem 0 0;
+    /* Changed margin from left to right */
     border-radius: 5px;
     font-weight: bold;
     position: relative;
@@ -127,17 +133,21 @@ nav a:hover {
 }
 
 .container {
-    padding-top: 0;  /* Remove top padding */
+    padding-top: 0;
+    /* Remove top padding */
     padding-bottom: 3rem;
     max-width: 1200px;
     margin: 0 auto;
     margin-bottom: 4rem;
-    min-height: calc(100vh - 200px); /* Ensure content fills page */
+    min-height: calc(100vh - 200px);
+    /* Ensure content fills page */
     flex: 1;
     width: 100%;
     padding: 2rem;
     z-index: 1;
 }
+
+
 
 .intro {
     background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
@@ -156,7 +166,7 @@ nav a:hover {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(45deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 100%);
+    background: linear-gradient(45deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 100%);
     pointer-events: none;
 }
 
@@ -165,7 +175,7 @@ nav a:hover {
     margin-bottom: 1.5rem;
     line-height: 1.2;
     color: var(--white);
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .intro p {
@@ -177,7 +187,7 @@ nav a:hover {
     opacity: 0.9;
 }
 
-section {
+section:not(#hero) {
     background-color: var(--white);
     padding: 2.5rem;
     border-radius: 15px;
@@ -188,13 +198,15 @@ section {
     border-top: 4px solid var(--primary-color);
 }
 
-section:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-}
+
 
 section:last-child {
     margin-bottom: 0;
+}
+
+section:not(#hero):hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
 }
 
 h2 {
@@ -214,7 +226,8 @@ label {
     font-weight: bold;
 }
 
-input, textarea {
+input,
+textarea {
     padding: 1.2rem;
     border: 2px solid var(--accent-color);
     border-radius: 10px;
@@ -223,7 +236,8 @@ input, textarea {
     background-color: var(--white);
 }
 
-input:focus, textarea:focus {
+input:focus,
+textarea:focus {
     border-color: var(--primary-color);
     outline: none;
     box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1);
@@ -270,12 +284,16 @@ footer {
     background-color: var(--primary-dark);
     color: var(--white);
     text-align: center;
-    padding: 1rem 0; /* Changed from 2rem to 1rem */
-    position: relative; /* Change from fixed to relative */
+    padding: 1rem 0;
+    /* Changed from 2rem to 1rem */
+    position: relative;
+    /* Change from fixed to relative */
     width: 100%;
     bottom: 0;
-    margin-top: auto; /* Push footer to bottom */
-    font-size: 0.9rem; /* Added to make text slightly smaller */
+    margin-top: auto;
+    /* Push footer to bottom */
+    font-size: 0.9rem;
+    /* Added to make text slightly smaller */
     z-index: 1000;
 }
 
@@ -300,9 +318,7 @@ html {
 }
 
 /* Modern Scrollbar Styles */
-body {
-    overflow-y: overlay;
-}
+
 
 /* Webkit scrollbar styles (Chrome, Safari, Edge) */
 ::-webkit-scrollbar {
@@ -323,7 +339,8 @@ body {
     background-color: rgba(0, 0, 0, 0.3);
     border-radius: 4px;
     transition: background-color 0.2s ease;
-    border: none !important;
+    border: 2px solid transparent;
+    background-clip: padding-box;
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -338,6 +355,17 @@ body {
     margin-right: calc(-50vw + 50%);
     height: var(--slideshow-height);
     z-index: 1;
+
+    margin-top: -50px;
+    /* Slight overlap for a seamless feel */
+}
+
+
+.divider {
+    text-align: center;
+    font-size: 24px;
+    margin: 30px 0;
+    color: #444;
 }
 
 .slide {
@@ -368,24 +396,24 @@ body {
     right: 0;
     padding: 3rem;
     z-index: 3;
-    background: linear-gradient(to top, 
-        rgba(0,0,0,0.9) 0%,
-        rgba(0,0,0,0.7) 50%,
-        rgba(0,0,0,0) 100%);
+    background: linear-gradient(to top,
+            rgba(0, 0, 0, 0.9) 0%,
+            rgba(0, 0, 0, 0.7) 50%,
+            rgba(0, 0, 0, 0) 100%);
 }
 
 .slide-content h2 {
     color: white;
     font-size: 2.5rem;
     margin-bottom: 1rem;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .slide-content p {
     color: white;
     font-size: 1.2rem;
     max-width: 800px;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 .slide::after {
@@ -395,11 +423,12 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(0deg, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0) 100%);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0) 100%);
     z-index: 1;
 }
 
-.prev, .next {
+.prev,
+.next {
     position: absolute;
     top: 50%;
     /* transform: translateY(-50%); */
@@ -417,10 +446,16 @@ body {
     justify-content: center;
 }
 
-.prev { left: 0; }
-.next { right: 0; }
+.prev {
+    left: 0;
+}
 
-.prev:hover, .next:hover {
+.next {
+    right: 0;
+}
+
+.prev:hover,
+.next:hover {
     background: rgba(0, 0, 0, 0.8);
     width: 60px;
 }
@@ -535,13 +570,15 @@ body {
     .slideshow-container {
         height: 400px;
     }
-    
-    .prev, .next {
+
+    .prev,
+    .next {
         padding: 1rem 0.8rem;
         font-size: 1.5rem;
     }
-    
-    .prev:hover, .next:hover {
+
+    .prev:hover,
+    .next:hover {
         padding: 1rem 1.3rem;
     }
 }
@@ -556,7 +593,7 @@ body {
         flex-direction: column;
         padding: 2rem;
     }
-    
+
     .intro h2 {
         font-size: 2rem;
     }
@@ -568,14 +605,23 @@ body {
 
 .hero {
     position: relative;
-    width: 100vw;
-    height: 80vh;
-    margin-left: calc(-50vw + 50%);
-    margin-right: calc(-50vw + 50%);
+    width: 100%;
+    height: 90vh;
     overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    text-align: center;
+    padding: 2rem;
+    margin: 0 auto;
 }
 
 .hero-bg {
@@ -585,8 +631,14 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center;
     z-index: 1;
+}
+
+.hero h1,
+.hero p {
+    color: white;
+    margin: 0 auto 1rem;
+    text-align: center;
 }
 
 .hero-content {
@@ -596,7 +648,7 @@ body {
     color: white;
     padding: 2rem;
     max-width: 800px;
-    /* animation: fadeInUp 1s ease; */
+    animation: fadeInUp 1s ease;
 }
 
 .hero::after {
@@ -607,22 +659,22 @@ body {
     right: 0;
     bottom: 0;
     background: linear-gradient(to bottom,
-        rgba(0,0,0,0.4) 0%,
-        rgba(0,0,0,0.6) 50%,
-        rgba(0,0,0,0.8) 100%);
+            rgba(0, 0, 0, 0.4) 0%,
+            rgba(0, 0, 0, 0.6) 50%,
+            rgba(0, 0, 0, 0.8) 100%);
     z-index: 1;
 }
 
 .hero h1 {
     font-size: 3.5rem;
     margin-bottom: 1.5rem;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .hero p {
     font-size: 1.5rem;
     margin-bottom: 2rem;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
 .cta-buttons {
@@ -659,7 +711,7 @@ body {
 }
 
 .cta-secondary:hover {
-    background-color: rgba(255,255,255,0.1);
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
 @keyframes fadeInUp {
@@ -667,6 +719,7 @@ body {
         opacity: 0;
         transform: translateY(20px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -695,5 +748,40 @@ body {
     .cta-button {
         width: 100%;
         text-align: center;
+    }
+}
+
+.contact-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.contact-info {
+    padding: 2rem;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
+    border-radius: 10px;
+    color: var(--white);
+}
+
+.contact-info h3 {
+    color: var(--white);
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.contact-info p {
+    margin-bottom: 1.5rem;
+    opacity: 0.9;
+}
+
+.contact-form {
+    padding: 2rem;
+}
+
+@media (max-width: 768px) {
+    .contact-wrapper {
+        grid-template-columns: 1fr;
     }
 }

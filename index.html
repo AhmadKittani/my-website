@@ -25,7 +25,7 @@
         </div>
     </header>
 
-    <section class="hero">
+    <section class="hero" id="hero">
         <img class="hero-bg" src="k.jpeg" alt="ڕێکخراوی ژیاو چالاکییەکان">
         <div class="hero-content">
             <h1>گۆڕینی ژیان، بەهێزکردنی کۆمەڵگا</h1>
@@ -37,18 +37,17 @@
         </div>
     </section>
 
+    <!-- <section class="divider">
+        <h2>نوێترین</h2>
+    </section> -->
+
+    <br>
+
+    <!-- <section class="intro">
+        <p>ڕێکخراوی ژیاو لە چالاکییە جیاوازەکاندا بەشدار دەبێت بۆ پێشبردنی کۆمەڵگا. لە خوارەوە نموونەی چالاکییەکانمان ببینن.</p>
+    </section> -->
     <div class="slideshow-container">
-        <div class="slide active">
-            <img src="hero-image.jpg" alt="ڕێکخراوی ژیاو">
-            <div class="slide-content">
-                <h2>گۆڕینی ژیان، بەهێزکردنی کۆمەڵگا</h2>
-                <p>ئێمە کار دەکەین بۆ دروستکردنی داهاتوویەکی گەشتر بۆ هەموو کەس</p>
-                <div class="cta-buttons">
-                    <a href="get-involved.html" class="cta-button cta-primary">بەشداربە</a>
-                    <a href="donate.html" class="cta-button cta-secondary">بەخشین</a>
-                </div>
-            </div>
-        </div>
+
         <div class="slide">
             <img src="photo_2025-03-16 23.35.41.jpeg" alt="خولی ڕاهێنان">
             <div class="slide-content">
@@ -89,30 +88,33 @@
             </div>
         </section>
 
-        <section id="about">
-            <h2>دەربارەی ئێمە</h2>
-            <p>ڕێکخراوەکەمان دامەزراوە بە ئامانجی یارمەتیدانی خەڵک و دروستکردنی کاریگەرییەکی ئەرێنی لە کۆمەڵگادا. ئێمە هەوڵ دەدەین کەسەکان بەهێز بکەین و گۆڕانکاری بەردەوام لە ڕێگەی بەرنامەکانمانەوە دروست بکەین.</p>
-        </section>
-
-        <section id="services">
-            <h2>خزمەتگوزارییەکانمان</h2>
-            <p>ئێمە کۆمەڵێک خزمەتگوزاری پێشکەش دەکەین بۆ پشتگیری ئامانجەکانمان، لەوانە خزمەتی کۆمەڵگا، بەرنامەکانی پەروەردە و زۆری تر. تیمەکەمان پابەندە بە پێشکەشکردنی چارەسەری کاریگەر کە گونجاو بێت لەگەڵ پێداویستییەکانی کۆمەڵگا.</p>
-        </section>
-
-        <section id="contact">
+        <!-- Add Contact Section -->
+        <section id="contact-home">
             <h2>پەیوەندیمان پێوە بکە</h2>
-            <form>
-                <label for="name">ناو</label>
-                <input type="text" id="name" name="name" required>
-                
-                <label for="email">ئیمەیڵ</label>
-                <input type="email" id="email" name="email" required>
-                
-                <label for="message">نامە</label>
-                <textarea id="message" name="message" rows="4" required></textarea>
-                
-                <button type="submit">ناردن</button>
-            </form>
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <h3>ناونیشان</h3>
+                    <p>سلێمانی، عیراق</p>
+                    <h3>ژمارەی تەلەفۆن</h3>
+                    <p>٠٧٧٠ ٠٠٠ ٠٠٠٠</p>
+                    <h3>ئیمەیڵ</h3>
+                    <p>info@zhyaw.org</p>
+                </div>
+                <div class="contact-form">
+                    <form>
+                        <label for="name">ناو</label>
+                        <input type="text" id="name" name="name" required>
+                        
+                        <label for="email">ئیمەیڵ</label>
+                        <input type="email" id="email" name="email" required>
+                        
+                        <label for="message">نامە</label>
+                        <textarea id="message" name="message" rows="4" required></textarea>
+                        
+                        <button type="submit">ناردن</button>
+                    </form>
+                </div>
+            </div>
         </section>
     </div>
 

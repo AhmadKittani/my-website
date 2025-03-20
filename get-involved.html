@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ku">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>بەشداربوون - ڕێکخراوی ژیاو</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <nav>
+                <a href="index.html">سەرەکی</a>
+                <a href="activites.html">چالاکییەکان</a>
+                <a href="about.html">دەربارە</a>
+                <a href="services.html">خزمەتگوزارییەکان</a>
+                <a href="contact.html">پەیوەندی</a>
+            </nav>
+            <div class="brand">
+                <a href="index.html">
+                    <h1>ڕێکخراوی ژیاو</h1>
+                    <img src="Slide1.png" alt="Logo">
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <section id="volunteer">
+            <h2>چۆن دەتوانی بەشداربیت؟</h2>
+            <p>بۆ بەشداریکردن لە چالاکییەکانمان، تکایە ئەم فۆڕمە پڕبکەرەوە. پاش وەرگرتنی داواکارییەکەت، پەیوەندیت پێوە دەکەین.</p>
+            
+            <form class="volunteer-form">
+                <label for="fullname">ناوی تەواو</label>
+                <input type="text" id="fullname" name="fullname" required>
+                
+                <label for="phone">ژمارەی مۆبایل</label>
+                <input type="tel" id="phone" name="phone" required>
+                
+                <label for="email">ئیمەیڵ</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="availability">کاتی بەردەستبوون</label>
+                <select id="availability" name="availability" required>
+                    <option value="">هەڵبژێرە...</option>
+                    <option value="weekends">هەینی و شەممە</option>
+                    <option value="evenings">ئێواران</option>
+                    <option value="mornings">بەیانیان</option>
+                    <option value="anytime">هەر کاتێک</option>
+                </select>
+                
+                <label for="interests">بواری خۆبەخشی</label>
+                <select id="interests" name="interests" required>
+                    <option value="">هەڵبژێرە...</option>
+                    <option value="education">پەروەردە و فێرکردن</option>
+                    <option value="environment">پاراستنی ژینگە</option>
+                    <option value="social">خزمەتی کۆمەڵایەتی</option>
+                    <option value="health">تەندروستی</option>
+                </select>
+                
+                <label for="message">بۆچی دەتەوێت بەشداربیت؟</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+                
+                <button type="submit">ناردنی داواکاری</button>
+            </form>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; ٢٠٢٥ ڕێکخراوی ژیاو. هەموو مافەکان پارێزراون.</p>
+    </footer>
+</body>
+</html>
