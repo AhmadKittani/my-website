@@ -28,29 +28,49 @@
         <section id="activities">
             <h2>چالاکییەکانمان</h2>
             
+            <div class="filter-controls">
+                <button class="filter-btn active" data-filter="all">هەموو</button>
+                <button class="filter-btn" data-filter="education">پەروەردە</button>
+                <button class="filter-btn" data-filter="environment">ژینگە</button>
+                <button class="filter-btn" data-filter="humanitarian">یارمەتی مرۆیی</button>
+                <button class="filter-btn" data-filter="arts">هونەر</button>
+            </div>
+            
             <div class="activity-grid">
-                <div class="activity-card">
+                <div class="activity-card" data-category="education">
                     <h3>خولی ڕاهێنانی پیشەیی</h3>
                     <p>بەڕێوەبردنی خولی ڕاهێنان بۆ گەنجان لە بواری کۆمپیوتەر و زمانی ئینگلیزی، بە مەبەستی باشترکردنی تواناکانیان و زیادکردنی هەلی کار.</p>
                     <span class="date">١٥ی ئازاری ٢٠٢٤</span>
                 </div>
 
-                <div class="activity-card">
+                <div class="activity-card" data-category="environment">
                     <h3>هەڵمەتی پاککردنەوەی ژینگە</h3>
                     <p>ڕێکخستنی هەڵمەتێکی گەورە بۆ پاککردنەوەی پارک و شوێنە گشتییەکان، بە بەشداری خۆبەخشان و ئەندامانی کۆمەڵگا.</p>
                     <span class="date">٢٠ی شوباتی ٢٠٢٤</span>
                 </div>
 
-                <div class="activity-card">
+                <div class="activity-card" data-category="humanitarian">
                     <h3>یارمەتیدانی خێزانە هەژارەکان</h3>
                     <p>دابەشکردنی خۆراک و پێداویستی سەرەکی بۆ ئەو خێزانانەی کە پێویستیان بە یارمەتییە، بە هاوکاری خێرخوازان.</p>
                     <span class="date">١٠ی کانونی دووەمی ٢٠٢٤</span>
                 </div>
 
-                <div class="activity-card">
+                <div class="activity-card" data-category="arts">
                     <h3>خولی وێنەگری</h3>
                     <p>فێرکردنی هونەری وێنەگری بۆ گەنجان، لەگەڵ پێشانگایەک بۆ نمایشکردنی بەرهەمەکانیان.</p>
                     <span class="date">٥ی ئاداری ٢٠٢٤</span>
+                </div>
+                
+                <div class="activity-card" data-category="education">
+                    <h3>خولی فێربوونی زمانی ئینگلیزی</h3>
+                    <p>بەڕێوەبردنی خولی زمانی ئینگلیزی بۆ مندالان و گەنجان، بە شێوازی نوێ و کاریگەر.</p>
+                    <span class="date">١ی نیسانی ٢٠٢٤</span>
+                </div>
+                
+                <div class="activity-card" data-category="humanitarian">
+                    <h3>کەمپینی کۆکردنەوەی خوێن</h3>
+                    <p>ڕێکخستنی کەمپینێک بۆ کۆکردنەوەی خوێن، بە هاوکاری نەخۆشخانەکان.</p>
+                    <span class="date">١٢ی ئایاری ٢٠٢٤</span>
                 </div>
             </div>
         </section>
@@ -58,5 +78,35 @@
     <footer>
         <p>&copy; ٢٠٢٥ ڕێکخراوی ژیاو. هەموو مافەکان پارێزراون.</p>
     </footer>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const activityCards = document.querySelectorAll('.activity-card');
+            
+            // Add click event for each filter button
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    
+                    // Add active class to clicked button
+                    this.classList.add('active');
+                    
+                    // Get the filter value
+                    const filterValue = this.dataset.filter;
+                    
+                    // Filter the cards
+                    activityCards.forEach(card => {
+                        if (filterValue === 'all' || card.dataset.category === filterValue) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
 </body>
 </html>

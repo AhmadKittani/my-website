@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>پەیوەندی - ڕێکخراوی ژیاو</title>
-    <link rel="stylesheet" href="style.css"> <!-- Ensure this path is correct -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
@@ -28,18 +29,58 @@
     <div class="container">
         <section id="contact">
             <h2>پەیوەندیمان پێوە بکە</h2>
-            <form>
-                <label for="name">ناو</label>
-                <input type="text" id="name" name="name" required>
+            
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <h3><i class="fas fa-map-marker-alt"></i> ناونیشان</h3>
+                    <p>شەقامی ١٠٠ مەتری، نزیک پارکی شانەدەر، هەولێر، هەرێمی کوردستان - عیراق</p>
+                    
+                    <h3><i class="fas fa-phone"></i> ژمارەی تەلەفۆن</h3>
+                    <p>٠٧٧٠ ٠٠٠ ٠٠٠٠</p>
+                    <p>٠٧٥٠ ٠٠٠ ٠٠٠٠</p>
+                    
+                    <h3><i class="fas fa-envelope"></i> ئیمەیڵ</h3>
+                    <p>info@zhyaw.org</p>
+                    <p>support@zhyaw.org</p>
+                    
+                    <h3><i class="fas fa-clock"></i> کاتی کارکردن</h3>
+                    <p>یەک شەممە - پێنج شەممە: ٩:٠٠ - ٤:٠٠</p>
+                    
+                    <div class="social-links">
+                        <h3>ڕێگاکانی پەیوەندی کۆمەڵایەتی</h3>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <form>
+                        <label for="name">ناو</label>
+                        <input type="text" id="name" name="name" required>
 
-                <label for="email">ئیمەیڵ</label>
-                <input type="email" id="email" name="email" required>
+                        <label for="email">ئیمەیڵ</label>
+                        <input type="email" id="email" name="email" required>
+                        
+                        <label for="phone">ژمارەی تەلەفۆن</label>
+                        <input type="tel" id="phone" name="phone">
 
-                <label for="message">نامە</label>
-                <textarea id="message" name="message" rows="4" required></textarea>
+                        <label for="subject">بابەت</label>
+                        <input type="text" id="subject" name="subject">
 
-                <button type="submit">ناردن</button>
-            </form>
+                        <label for="message">نامە</label>
+                        <textarea id="message" name="message" rows="4" required></textarea>
+
+                        <button type="submit">ناردن</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="map-container">
+                <!-- Updated to show Erbil instead of Sulaymaniyah -->
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d402.40717035532583!2d44.076259!3d36.208939!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4007218a37a6ade5%3A0xec34c1d49660069d!2z2LHbjtqp2K7Ysdin2YjbjCDamNuM2KfZiCDYqNuGINmH2KfZiNqp2KfYsduMINmIINix24bYtNuV2YbYqNuM2LHbjCBaaHlhdyBvcmdhbml6YXRpb24!5e0!3m2!1sen!2sus!4v1746092904742!5m2!1sen!2sus" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
         </section>
     </div>
     <footer>
