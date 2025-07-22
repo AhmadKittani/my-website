@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ku">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>قورئانی پیرۆز - ڕێکخراوی ژیاو</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta name="description" content="خوێندنەوەی قورئانی پیرۆز - ڕێکخراوی ژیاو">
+    <style>
+        .quran-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .quran-header {
+            text-align: center;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .quran-controls {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .surah-selector, .ayah-input {
+            flex: 1;
+            min-width: 200px;
+        }
+        
+        .surah-selector select, .ayah-input input {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+        
+        .quran-actions {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .quran-actions button {
+            padding: 0.8rem 1.5rem;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s;
+        }
+        
+        .quran-actions button:hover {
+            background-color: #3e8e41;
+        }
+        
+        .quran-display {
+            margin-top: 2rem;
+            line-height: 2;
+        }
+        
+        .surah-bismillah {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+            color: #4CAF50;
+        }
+        
+        .verse {
+            text-align: right;
+            margin-bottom: 1.5rem;
+            padding: 1rem;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            position: relative;
+        }
+        
+        .verse-number {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            line-height: 30px;
+            border-radius: 50%;
+            margin-left: 0.5rem;
+        }
+        
+        .verse-text {
+            font-size: 1.4rem;
+            line-height: 2.2;
+        }
+        
+        .verse-translation {
+            margin-top: 0.5rem;
+            font-size: 1rem;
+            color: #666;
+        }
+        
+        .loading {
+            text-align: center;
+            padding: 2rem;
+            color: #666;
+        }
+        
+        .error-message {
+            color: #e53935;
+            text-align: center;
+            padding: 1rem;
+            background-color: #ffebee;
+            border-radius: 4px;
+        }
+        
+        @media (max-width: 768px) {
+            .quran-controls {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <nav>
+                <a href="index.html">سەرەکی</a>
+                <a href="activites.html">چالاکییەکان</a>
+                <a href="about.html">دەربارە</a>
+                <a href="services.html">خزمەتگوزارییەکان</a>
+                <a href="quran.html">قورئانی پیرۆز</a>
+                <a href="contact.html">پەیوەندی</a>
+            </nav>
+            <div class="brand">
+                <a href="index.html">
+                    <h1>ڕێکخراوی ژیاو</h1>
+                    <img src="Slide1.png" alt="Logo">
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <h1 class="page-title">قورئانی پیرۆز</h1>
+        
+        <div class="quran-container">
+            <div class="quran-header">
+                <h2>خوێندنەوەی قورئانی پیرۆز</h2>
+                <p>سوورەت و ئایەتەکان هەڵبژێرە بۆ خوێندنەوە</p>
+            </div>
+            
+            <div class="quran-controls">
+                <div class="surah-selector">
+                    <label for="surah-select">سوورەت:</label>
+                    <select id="surah-select">
+                        <option value="">هەڵبژاردنی سوورەت...</option>
+                        <!-- Surah options will be added by JavaScript -->
+                    </select>
+                </div>
+                
+                <div class="ayah-input">
+                    <label for="ayah-number">ئایەت (دانانی بەتاڵ بۆ هەموو ئایەتەکان):</label>
+                    <input type="number" id="ayah-number" min="1" placeholder="ژمارەی ئایەت">
+                </div>
+            </div>
+            
+            <div class="quran-actions">
+                <button id="load-quran">پیشاندان</button>
+                <button id="load-random">ئایەتی هەڕەمەکی</button>
+            </div>
+            
+            <div class="quran-display" id="quran-display">
+                <div class="loading">تکایە سوورەتێک هەڵبژێرە...</div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-contact">
+                <h3>پەیوەندی</h3>
+                <p><i class="fas fa-map-marker-alt"></i> شەقامی ١٠٠ مەتری، نزیک پارکی شانەدەر، هەولێر</p>
+                <p><i class="fas fa-phone"></i> ٠٧٧٠ ٠٠٠ ٠٠٠٠</p>
+                <p><i class="fas fa-envelope"></i> info@zhyaw.org</p>
+            </div>
+            <div class="footer-links">
+                <h3>بەستەرە گرنگەکان</h3>
+                <ul>
+                    <li><a href="index.html">سەرەکی</a></li>
+                    <li><a href="activites.html">چالاکییەکان</a></li>
+                    <li><a href="about.html">دەربارە</a></li>
+                    <li><a href="services.html">خزمەتگوزارییەکان</a></li>
+                    <li><a href="quran.html">قورئانی پیرۆز</a></li>
+                    <li><a href="contact.html">پەیوەندی</a></li>
+                    <li><a href="donate.html">بەخشین</a></li>
+                </ul>
+            </div>
+            <div class="footer-social">
+                <h3>پەیوەندیمان پێوە بکە</h3>
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Youtube"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; ٢٠٢٥ ڕێکخراوی ژیاو. هەموو مافەکان پارێزراون.</p>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+    <script src="quran.js"></script>
+</body>
+</html>

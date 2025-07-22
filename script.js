@@ -238,4 +238,46 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     // Activity filtering (already implemented in activities.html)
+    
+    // Daily Quran verse
+    const dailyVerseContainer = document.getElementById('daily-verse');
+    if (dailyVerseContainer) {
+        fetchDailyVerse();
+    }
+    
+    function fetchDailyVerse() {
+        // Get a random surah and ayah
+        const randomSurah = Math.floor(Math.random() * 114) + 1;
+        
+        // For simplicity, we'll get a random ayah from a known API
+        fetch(`https://api.alquran.cloud/v1/surah/${randomSurah}/ar.alafasy`)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                const surah = data.data;
+                // Get a random ayah from this surah
+                const randomAyahIndex = Math.floor(Math.random() * surah.ayahs.length);
+                const randomAyah = surah.ayahs[randomAyahIndex];
+                
+                // Display the verse
+                dailyVerseContainer.innerHTML = `
+                    <div class="verse-arabic">${randomAyah.text}</div>
+                    <div class="verse-info">
+                        سوورەتی ${surah.name} (${surah.englishName}), ئایەتی ${randomAyah.numberInSurah}
+                    </div>
+                `;
+            })
+            .catch(error => {
+                dailyVerseContainer.innerHTML = `
+                    <div class="error-message">
+                        <p>بەداخەوە، ناتوانین ئایەتەکە پیشان بدەین. تکایە دواتر هەوڵ بدەوە.</p>
+                        <p>${error.message}</p>
+                    </div>
+                `;
+            });
+    }
 });
